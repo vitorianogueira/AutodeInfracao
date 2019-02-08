@@ -1,0 +1,158 @@
+<head>
+    <!-- SCRIPTS BOOTSTRAP-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+    <!--- Css-->
+    <link rel="stylesheet" href="..\css\index.css">
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
+    <!--Scripts JS e Mask-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
+    <!--Scripts Web3js-->
+    <script src="../node_modules/web3/dist/web3.min.js"></script>
+    <script src="../node_modules/abi-decoder/dist/abi-decoder.js"></script>
+</head>
+<nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="../src/index.htm ">Blockchain Inova</a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="../src/consulta.htm">
+                    <i class="fas fa-database"></i>
+                    Consultar Infração
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="../src/historico.htm">
+                    <i class="fas fa-history"></i>
+                    Historico
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="../src/transferir.htm">
+                    <i class="fas fa-money-bill"></i>
+                    Transferir
+                </a>
+            </li>
+        </ul>
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link">
+                    &nbsp &nbsp &nbsp <i class="fab fa-ethereum"></i>
+                    Seu saldo atual é:
+                </a>
+            </li>
+            <li class="nav-item active">
+                <input type="text" readonly class="form-control-plaintext" id="saldo" disabled>
+                </a>
+            </li>
+        </ul>
+        <div class="form-inline my-2 my-lg-0">
+            <input id="input_search" class="form-control mr-sm-2" type="text" placeholder="Digite o Hash..." aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="btn_pesquisa">Pesquisar</button>
+        </div>
+    </div>
+</nav>
+<div class="container register-form">
+    <div>
+        <div class="auto">
+            <p>Dados da sua transação</p>
+        </div>
+        <div class="form-content">
+            <div class="form-group row">
+                <label for="blockHash" class="col-sm-2 col-form-label">blockHash:</label>
+                <div class="col-sm-10">
+                    <input type="text" readonly class="form-control-plaintext" id="blockHash" disabled>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="Number" class="col-sm-2 col-form-label">Block Number:</label>
+                <div class="col-sm-10">
+                    <input type="text" readonly class="form-control-plaintext" id="block" disabled>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="From" class="col-sm-2 col-form-label">From:</label>
+                <div class="col-sm-10">
+                    <input type="text" readonly class="form-control-plaintext" id="from" disabled>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="Number" class="col-sm-2 col-form-label">To:</label>
+                <div class="col-sm-10">
+                    <input type="text" readonly class="form-control-plaintext" id="to" disabled>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="Number" class="col-sm-2 col-form-label">Gas:</label>
+                <div class="col-sm-10">
+                    <input type="text" readonly class="form-control-plaintext" id="gas" disabled>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="GasPrice" class="col-sm-2 col-form-label">Gas Price:</label>
+                <div class="col-sm-10">
+                    <input type="text" readonly class="form-control-plaintext" id="gasprice" disabled>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="Hash" class="col-sm-2 col-form-label">Hash:</label>
+                <div class="col-sm-10">
+                    <input type="text" readonly class="form-control-plaintext" id="hash" disabled>
+                </div>
+            </div>
+            <div class="form-group row" id="dinput">
+                <label for="Number" class="col-sm-2 col-form-label">Input:</label>
+                <div class="col-sm-10">
+                    <input type="text" readonly class="form-control-plaintext" id="input" disabled>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="Number" class="col-sm-2 col-form-label">Nonce:</label>
+                <div class="col-sm-10">
+                    <input type="text" readonly class="form-control-plaintext" id="nonce" disabled>
+                </div>
+            </div>
+            <div class="form-group row" id="dvalue">
+                <label for="Number" class="col-sm-2 col-form-label">Value:</label>
+                <div class="col-sm-10">
+                    <input type="text" readonly class="form-control-plaintext" id="value" disabled>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="TimeStamp" class="col-sm-2 col-form-label">TimeStamp:</label>
+                <div class="col-sm-10">
+                    <input type="text" readonly class="form-control-plaintext" id="TimeStamp" disabled>
+                </div>
+            </div>
+            <div class="form-group row" id="ddecode">
+                <label for="decode" class="col-sm-2 col-form-label">Decode Input:</label>
+                <div class="col-sm-10">
+                <textarea readonly class="form-control-plaintext" id="decode" rows="6" cols="145"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="../js/search.js"></script>
+
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const hash = urlParams.get('hash');
+    if (hash) {
+        $('#input_search').val(hash);
+        $('#btn_pesquisa').trigger("click");
+    } else {
+        alert('Hash não localizado, verifique o hash informado e tente novamente!')
+    }
+
+</script>

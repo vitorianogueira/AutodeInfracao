@@ -1,0 +1,144 @@
+.auto
+{
+    text-align: center;
+    height: 40px;
+    background: SteelBlue		;
+    color: #fff;
+    font-weight: bold;
+    line-height: 40px;
+    margin-top: 5%;
+}
+.autoConsulta{
+    text-align: center;
+    height: 40px;
+    background: SteelBlue		;
+    color: #fff;
+    font-weight: bold;
+    line-height: 40px;
+    margin-top: 3%;
+  
+ 
+}
+.note
+{
+    text-align: center;
+    height: 40px;
+    background: SteelBlue		;
+    color: #fff;
+    font-weight: bold;
+    line-height: 40px;
+    margin-top: -1%;
+ 
+}
+.form-content
+{
+    padding: 5%;
+    border: 1px solid #ced4da;
+    margin-bottom: 2%;
+}
+.form-control{
+    border-radius:1.0rem;
+    
+}
+#search{
+    border-radius:0.5rem;
+   
+}
+#btn_envio
+{
+    border:none;
+    border-radius:1.5rem;
+    padding: 1%;
+    width: 20%;
+    cursor: pointer;
+    background: #0062cc;
+    color: #fff;
+}
+#btn_cancelar
+{
+    border:none;
+    border-radius:1.5rem;
+    padding: 1%;
+    width: 20%;
+    cursor: pointer;
+    background: white;
+    color:black;
+}
+#home{
+     color:black ; 
+     
+    
+}
+
+#consulta{
+    
+    color: black;
+}
+
+#historico{
+    
+    color: black;
+}
+
+#tranferir{
+    
+    color: black;
+}
+#atualizar{
+    display: block; /* Make the links appear below each other instead of side-by-side */
+    text-align: right; /* Center-align text */
+    /*width: 220%; /* Equal width (5 icons with 20% width each = 100%) */
+    font-size: 20px; /* Increased font size */
+    background:transparent;
+    border:none;
+    
+}
+#btn_transfer{
+    display: block; /* Make the links appear below each other instead of side-by-side */
+    text-align: right; /* Center-align text */
+    /*width: 220%; /* Equal width (5 icons with 20% width each = 100%) */
+    font-size: 20px; /* Increased font size */
+    background:transparent;
+    border:none;
+    
+}
+
+textarea{
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+} 
+.table-responsive{
+    table-layout: fixed;
+   
+}
+#saldo{
+    color: #fff;
+}
+#btn{
+    display: block; /* Make the links appear below each other instead of side-by-side */
+    text-align: right; /* Center-align text */
+    /*width: 220%; /* Equal width (5 icons with 20% width each = 100%) */
+    font-size: 15px; /* Increased font size */
+    background:transparent;
+    border:none;
+    
+}
+#btn_filter{
+    background:transparent;
+    border:none;
+
+}
+#system-search{
+    border-radius:1.0rem;
+}
+#descriptografar{
+    background:transparent;
+    border:none;
+
+}
+
+#divDados {
+    /* display: none; */
+    text-align: center;
+}

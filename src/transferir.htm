@@ -1,0 +1,117 @@
+<head>
+    <!-- SCRIPTS BOOTSTRAP-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+    <!--- Css-->
+    <link rel="stylesheet" href="..\css\index.css">
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
+    <!--Scripts JS e Mask-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
+    <!--Scripts Web3js-->
+    <script src="../node_modules/web3/dist/web3.min.js"></script>
+    <script src="../node_modules/abi-decoder/dist/abi-decoder.js"></script>
+</head>
+<nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="../src/index.htm ">Blockchain Inova</a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="../src/consulta.htm">
+                    <i class="fas fa-database"></i>
+                    Consultar Infração
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="../src/historico.htm">
+                    <i class="fas fa-history"></i>
+                    Historico
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="../src/transferir.htm">
+                    <i class="fas fa-money-bill"></i>
+                    Transferir
+                </a>
+            </li>
+        </ul>
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link">
+                    &nbsp &nbsp &nbsp <i class="fab fa-ethereum"></i>
+                    Seu saldo atual é:
+                </a>
+            </li>
+            <li class="nav-item active">
+                <input type="text" readonly class="form-control-plaintext" id="saldo" disabled>
+                </a>
+            </li>
+        </ul>
+        <div class="form-inline my-2 my-lg-0">
+            <input id="input_search" class="form-control mr-sm-2" type="text" placeholder="Digite o Hash..." aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="btn_pesquisa">Pesquisar</button>
+        </div>
+    </div>
+</nav>
+<div class="container register-form">
+    <div>
+        <div class="auto">
+            <p>Transferir Ether</p>
+        </div>
+        <div class="form-content">
+            <div class="form-group row">
+                <label for="conta" class="col-md-4 col-form-label text-md-right">From:</label>
+                <div class="col-md-6">
+                    <input type="text" id="conta" class="form-control" readonly autofocus>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="contaTranfer" class="col-md-4 col-form-label text-md-right">To:</label>
+                <div class="col-md-6">
+                    <input type="text" id="contaTranfer" class="form-control" required />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="valor" class="col-md-4 col-form-label text-md-right">Valor:</label>
+                <div class="col-md-6">
+                    <input type="number" id="valor" class="form-control" autofocus />
+                </div>
+                <button class="fas fa-arrow-circle-right" id="btn_transfer"></button>
+            </div>
+            <div class="form-group row">
+                <label for="txhash" class="col-md-4 col-form-label text-md-right">Hash da transação:</label>
+                <div class="col-md-6">
+                    <input type="text" id="txhash" class="form-control" readonly autofocus />
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="../js/transferencia.js"></script>
+
+<script>
+
+    $(document).keypress(function (e) {
+        if (e.which == 13) $('#btn_pesquisa').click();
+    });
+
+    $("#btn_pesquisa").click(function (e) {
+        if ($("#input_search").val() != "") {
+            window.location.href = ("C:/Users/Administrador/Desktop/multa/src/pesquisa.htm?hash=" + $("#input_search").val());
+        } else {
+            alert("Favor preencher o hash para realizar a pesquisa");
+        }
+    });
+
+</script>
